@@ -14,13 +14,15 @@ const submitted = function () {
   if (!btns.some((btn) => btn.classList.contains("active"))) return;
 
   ratingEl.classList.add("hidden");
+  ratingEl.classList.remove("visible");
+
   btns.forEach((btn) => {
     if (btn.classList.contains("active")) activeNum = +btn.textContent;
   });
 
   textEl.textContent = `You selected ${activeNum} out of 5`;
 
-  submitEl.classList.remove("hidden");
+  submitEl.classList.add("visible");
 };
 
 btns.forEach((btn) => {

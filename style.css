@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   padding: 2.2rem;
 
   width: 30rem;
@@ -11,6 +12,12 @@
     hsl(213, 19%, 18%) 0%,
     hsl(216, 12%, 12%)
   );
+}
+
+.rating-component {
+  transition: all 0.3s;
+
+  z-index: -999;
 }
 
 .star {
@@ -111,11 +118,12 @@
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .thanks-flex {
-  margin-bottom: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,6 +153,35 @@
 .text-spacing {
   text-align: center;
   letter-spacing: 0.2px;
+}
+
+.submitted-component {
+  /* Hide navigation */
+  /* Allows NO transitions at all */
+  /* display: none; */
+  transition: all 0.3s;
+
+  /* 1) Hide it visually */
+  opacity: 0;
+
+  /* 2) Make it unaccessible to mouse and keyboard */
+  pointer-events: none;
+
+  /* 3) Hide it from screen readers */
+  visibility: hidden;
+
+  z-index: 999;
+  position: absolute;
+  top: 0.2rem;
+  left: 0;
+  padding: 2.2rem;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
 }
 /*  
   - Font sizes (px)
