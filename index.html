@@ -58,18 +58,63 @@
         <!-- TEXT -->
 
         <!-- RATING SCORE -->
-        <div class="rating-buttons">
-          <button class="btn">1</button>
-          <button class="btn">2</button>
-          <button class="btn">3</button>
-          <button class="btn">4</button>
-          <button class="btn">5</button>
-        </div>
-        <!-- RATING SCORE -->
+        <form class="form" id="form">
+          <fieldset class="rating-buttons">
+            <legend class="visually-hidden">
+              Please select a rating (1-5)
+            </legend>
+            <input
+              type="radio"
+              id="one"
+              class="radio"
+              name="rating"
+              value="1"
+            />
+            <label for="one" class="btn-radio flex-centering-item">1</label>
 
-        <!-- SUBMIT -->
-        <button class="submit">Submit</button>
-        <!-- SUBMIT -->
+            <input
+              type="radio"
+              id="two"
+              class="radio"
+              name="rating"
+              value="2"
+            />
+            <label for="two" class="btn-radio flex-centering-item">2</label>
+
+            <input
+              type="radio"
+              id="three"
+              class="radio"
+              name="rating"
+              value="3"
+            />
+            <label for="three" class="btn-radio flex-centering-item">3</label>
+
+            <input
+              type="radio"
+              id="four"
+              class="radio"
+              name="rating"
+              value="4"
+            />
+            <label for="four" class="btn-radio flex-centering-item">4</label>
+
+            <input
+              type="radio"
+              id="five"
+              class="radio"
+              name="rating"
+              value="5"
+            />
+            <label for="five" class="btn-radio flex-centering-item">5</label>
+          </fieldset>
+
+          <!-- SUBMIT -->
+          <button id="form" type="submit" class="submit">Submit</button>
+          <!-- SUBMIT -->
+        </form>
+
+        <!-- RATING SCORE -->
       </div>
       <!-- RATING -->
 

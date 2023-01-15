@@ -52,12 +52,13 @@
 
 .rating-buttons {
   margin-bottom: 1.6rem;
+  border: none;
 
   display: flex;
   justify-content: space-between;
 }
 
-.btn {
+.btn-radio {
   margin-bottom: 0.8rem;
 
   font-size: 1.2rem;
@@ -75,12 +76,12 @@
   transition: all 0.4s;
 }
 
-.btn:hover:not(.active) {
+.btn-radio:hover:not(.active) {
   color: hsl(0, 0%, 100%);
   background-color: hsl(217, 12%, 63%);
 }
 
-.btn:active {
+.btn-radio:active {
   color: hsl(0, 0%, 100%);
   transform: translateY(3px);
 }
@@ -183,6 +184,16 @@
   pointer-events: auto;
   visibility: visible;
   transform: translateX(0);
+}
+
+.radio {
+  display: none;
+}
+
+.flex-centering-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*  
   - Font sizes (px)

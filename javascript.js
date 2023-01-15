@@ -1,29 +1,14 @@
 "use strict";
 
-const btns = [...document.querySelectorAll(".btn")];
+const btns = [...document.querySelectorAll(".btn-radio")];
 
 const ratingEl = document.querySelector(".rating-component");
 const submitEl = document.querySelector(".submitted-component");
 const textEl = document.querySelector(".selected-text");
 
-const submitBtnEl = document.querySelector(".submit");
+const formEl = document.querySelector(".form");
 
 let activeNum;
-
-const submitted = function () {
-  if (!btns.some((btn) => btn.classList.contains("active"))) return;
-
-  ratingEl.classList.add("hidden");
-  ratingEl.classList.remove("visible");
-
-  btns.forEach((btn) => {
-    if (btn.classList.contains("active")) activeNum = +btn.textContent;
-  });
-
-  textEl.textContent = `You selected ${activeNum} out of 5`;
-
-  submitEl.classList.add("visible");
-};
 
 btns.forEach((btn) => {
   btn.addEventListener("click", function () {
@@ -33,4 +18,20 @@ btns.forEach((btn) => {
   });
 });
 
-submitBtnEl.addEventListener("click", submitted);
+formEl.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (!btns.some((btn) => btn.classList.contains("active"))) return;
+
+  ratingEl.classList.remove("visible");
+  ratingEl.classList.add("hidden");
+
+  btns.forEach((btn) => {
+    if (btn.classList.contains("active")) activeNum = +btn.textContent;
+  });
+
+  textEl.textContent = `You selected ${activeNum} out of 5`;
+
+  submitEl.classList.remove("hidden");
+  submitEl.classList.add("visible");
+});
